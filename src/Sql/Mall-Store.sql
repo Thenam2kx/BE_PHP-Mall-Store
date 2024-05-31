@@ -8,7 +8,7 @@ CREATE TABLE `Users` (
   `RoleID` int DEFAULT 0,
   `FullName` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL,
-  `Phone` varchar(50),
+  `Phone` varchar(13),
   `Gender` bit DEFAULT 0,
   `Password` varchar(50) NOT NULL,
   `Status` bit DEFAULT 0,
@@ -19,7 +19,7 @@ CREATE TABLE `Users` (
 CREATE TABLE `Products` (
   `ProductID` int PRIMARY KEY AUTO_INCREMENT,
   `CategoryID` int NOT NULL,
-  `ProductName` varchar(50) NOT NULL,
+  `ProductName` varchar(255) NOT NULL,
   `UnitPrice` int NOT NULL,
   `UnitInStock` int NOT NULL,
   `CreateAt` date NOT NULL,
@@ -46,19 +46,26 @@ CREATE TABLE `Reviews` (
   `ReviewsID` int PRIMARY KEY AUTO_INCREMENT,
   `ProductID` int NOT NULL,
   `Star` int NOT NULL,
-  `Riviews` longtext
+  `Riviews` varchar(500)
+);
+
+CREATE TABLE `Images` (
+  `ImageID` int PRIMARY KEY AUTO_INCREMENT,
+  `ProductID` int NOT NULL,
+  `Title` varchar(150) NOT NULL,
+  `Thumbnail` varchar(255) NOT NULL
 );
 
 CREATE TABLE `Gallery` (
   `GalleryID` int PRIMARY KEY AUTO_INCREMENT,
-  `ProductID` int NOT NULL,
+  `ImageID` int NOT NULL,
   `Thumbnail` varchar(255) NOT NULL
 );
 
 CREATE TABLE `Order` (
   `OrderID` int PRIMARY KEY AUTO_INCREMENT,
   `UserID` int NOT NULL,
-  `Address` varchar(255) NOT NULL,
+  `Address` varchar(150) NOT NULL,
   `ShippingFee` int NOT NULL,
   `OrderDate` date NOT NULL,
   `ShippedDate` date NOT NULL,
@@ -100,8 +107,6 @@ ALTER TABLE `Reviews` ADD FOREIGN KEY (`ProductID`) REFERENCES `Products` (`Prod
 
 ALTER TABLE `Discount` ADD FOREIGN KEY (`ProductID`) REFERENCES `Products` (`ProductID`);
 
-ALTER TABLE `Gallery` ADD FOREIGN KEY (`ProductID`) REFERENCES `Products` (`ProductID`);
-
 ALTER TABLE `Products` ADD FOREIGN KEY (`CategoryID`) REFERENCES `Category` (`CategoryID`);
 
 ALTER TABLE `Cart` ADD FOREIGN KEY (`UserID`) REFERENCES `Users` (`UserID`);
@@ -109,3 +114,7 @@ ALTER TABLE `Cart` ADD FOREIGN KEY (`UserID`) REFERENCES `Users` (`UserID`);
 ALTER TABLE `CartDetail` ADD FOREIGN KEY (`CartID`) REFERENCES `Cart` (`CartID`);
 
 ALTER TABLE `CartDetail` ADD FOREIGN KEY (`ProductID`) REFERENCES `Products` (`ProductID`);
+
+ALTER TABLE `Gallery` ADD FOREIGN KEY (`ImageID`) REFERENCES `Images` (`ImageID`);
+
+ALTER TABLE `Images` ADD FOREIGN KEY (`ProductID`) REFERENCES `Products` (`ProductID`);

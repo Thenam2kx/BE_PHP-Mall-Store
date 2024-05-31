@@ -2,9 +2,6 @@
 @import 'utils/functions';
 @import 'utils/mixins';
 
-@import 'vendors/bootstrap';
-@import 'vendors/jquery-ui';
-
 @import 'base/reset';
 @import 'base/typography';
 
@@ -13,6 +10,7 @@
 @import 'layouts/footer';
 @import 'layouts/sidebar';
 @import 'layouts/forms';
+@import 'layouts/aside';
 
 @import 'components/buttons';
 @import 'components/carousel';
@@ -21,6 +19,3 @@
 @import 'pages/home';
 @import 'pages/about';
 @import 'pages/contact';
-
-@import 'themes/theme';
-@import 'themes/admin';
