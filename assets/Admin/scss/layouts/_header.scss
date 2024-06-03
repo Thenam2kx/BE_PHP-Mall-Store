@@ -1,57 +1,14 @@
 .header {
-  @include setHeightWidth(32px, 100%);
+  @include setHeightWidth(auto, 100%);
+  max-width: 100vw;
+  padding: 15px 30px;
   border-bottom: 1px solid #34495e;
   background-color: $bg-primary;
 
   &--wrapper {
     @include setHeightWidth(100%, 100%);
     @include flexboxLayout(row, center, space-between);
-    padding: 0 10px;
 
-    &--left {
-      @include flexboxLayout(row, center, normal);
-      gap: 20px;
-    } 
   }
 
-  &--logo {
-
-    &__img {
-      @include setHeightWidth(24px, 24px);
-      border-radius: 50%;
-    }
-  }
-
-  &--link {
-    @include flexboxLayout(row, center, normal);
-    gap: 4px;
-    font-weight: 500;
-    color: $text-primary;
-
-    &__icon {
-      font-size: 16px;
-      font-weight: 500;
-    }
-
-    &__text {
-      font-size: 14px;
-    }
-  }
-
-  &--account {
-    &--link {
-      @include flexboxLayout(row, center, normal);
-      gap: 10px;
-    }
-
-    &__text {
-      font-size: 14px;
-      color: $text-primary;
-    }
-
-    &__img {
-      @include setHeightWidth(24px, 24px);
-      border-radius: 50%;
-    }
-  }
 }

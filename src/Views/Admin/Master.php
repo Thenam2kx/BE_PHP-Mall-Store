@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <link rel="stylesheet" href="./assets/Admin/css/main.css">
 </head>
 
@@ -15,35 +17,14 @@
   <div class="container">
     <header class="header">
       <section class="header--wrapper">
-        <section class="header--wrapper--left">
-          <div class="header--logo">
-            <a href="#">
-              <img class="header--logo__img" src="https://picsum.photos/24/24" alt="">
-            </a>
-          </div>
+        <section class="header--wrapper--search">
 
-          <div class="header--review">
-            <a href="#" class="header--link">
-              <i class='header--link__icon bx bx-home-alt'></i>
-              <p class="header--link__text">Preview</p>
-            </a>
-          </div>
-
-          <div class="header--addNew">
-            <a href="#" class="header--link">
-              <i class='header--link__icon bx bx-plus'></i>
-              <p class="header--link__text">Add new</p>
-            </a>
-          </div>
 
         </section>
+
+
         <section class="header--wrapper--right">
-          <section class="header--account">
-            <a href="#" class="header--account--link">
-              <p class="header--account__text">Welcome, <span>Thenam2kx</span></p>
-              <img class="header--account__img" src="https://picsum.photos/28/28" alt="">
-            </a>
-          </section>
+
         </section>
       </section>
     </header>
@@ -100,11 +81,22 @@
         </ul>
       </aside>
 
+      <section class="content">
+        <?php include './src/Views/Admin/ShowAllPrdView.php' ?>
+
+      </section>
+
     </main>
 
     <footer></footer>
   </div>
 
+
+  <script>
+    
+  </script>
+
   <script type="module" src="./assets/Admin/js/main.js"></script>
 </body>
+
 </html>

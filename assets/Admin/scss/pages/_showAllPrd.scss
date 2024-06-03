@@ -1,0 +1,66 @@
+.ShowAllPrd {
+  @include setHeightWidth(100%, 100%);
+  border-radius: 12px;
+  padding: 24px 16px;
+  background-color: $bg-primary;
+
+  &--header {
+    @include flexboxLayout(row, center, space-between);
+  }
+}
+
+.showNumber {
+  @include flexboxLayout(row, center, normal);
+  gap: 10px;
+
+  &__text {
+    color: $text-secondary;
+    font-size: 14px;
+  }
+
+  &__input {
+    @include setHeightWidth(auto, 50px);
+    text-align: center;
+    color: $text-secondary;
+    padding: 6px 0;
+    border: 1px solid $boder-primary;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  
+}
+
+.search {
+  &--form {
+    @include flexboxLayout(row, center, normal);
+      padding: 8px 22px;
+      border: 1px solid $boder-primary;
+      border-radius: 6px;
+
+    &__input {
+      @include setHeightWidth(auto, 500px);
+      color: $text-secondary;
+      font-size: 14px;
+    }
+
+    &__btn {
+      color: $text-secondary;
+      font-size: 22px;
+    }
+  }
+}
+
+.addNew {
+  &__link {
+    @include flexboxLayout(row, center, center);
+    padding: 14px 22px;
+    border-radius: 12px;
+    font-weight: 500;
+    color: $bg-primary;
+    background-color: $text-primary;
+  }
+}
